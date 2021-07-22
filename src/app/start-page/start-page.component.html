@@ -1,0 +1,13 @@
+<div class="page-wrapper">
+  <section class="search">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Search Images</mat-label>
+        <input matInput placeholder="Please enter a tag" value="Sushi" [formControl]="searchControl">
+        <mat-error *ngIf="searchControl.invalid">Please enter a valid tag</mat-error>
+      </mat-form-field>
+      <button mat-button (click)="reset()">Reset Input</button>
+      <button mat-raised-button color="primary" type="submit" (click)="submit()" [disabled]="searchControl.invalid">Submit</button>
+    </form>
+  </section>
+</div>
