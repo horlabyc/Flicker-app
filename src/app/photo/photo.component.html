@@ -1,18 +1,19 @@
 <div class="photo" (click)="navigate()">
-  <p class="tag-name">{{photo.tag}}</p>
-  <img [src]="photo.url">
+  <p class="tag-name">{{photo.tag | titlecase}}</p>
+  <p class="views">5000</p>
+  <img [src]="photo.url_q">
   <div class="owner">
     <p class="title">Owners name</p>
-    <p class="value"> {{photo.owner}} </p>
+    <p class="value"> {{photo.ownername}} </p>
   </div>
   <div class="time">
     <div class="uploaded">
       <p class="title">Uploaded</p>
-      <p>21.09.2018</p>
+      <p>{{photo.dateupload | date}}</p>
     </div>
     <div class="uploaded">
       <p class="title">Taken</p>
-      <p>21.09.2018</p>
+      <p>{{photo.datetaken | date}}</p>
     </div>
   </div>
 </div>

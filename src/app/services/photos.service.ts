@@ -18,12 +18,21 @@ export class PhotosService {
   ) { }
 
   searchPhotos(tag: string): Observable<any>{
-    const params = new HttpParams().append("tags", tag).append('format', 'json').append('nojsoncallback', '1').append('per_page', '1');
+    const params = new HttpParams().append("tags", tag)
+    .append('format', 'json')
+    .append('nojsoncallback', '1')
+    .append('per_page', '1')
+    .append('extras', 'date_upload, date_taken, owner_name, url_q, views')
+    .append('sort', 'interestingness-desc')
     return this.http.get(`${this.baseUrl}&api_key=${this.apiKey}`, { params: params })
   }
 
   searchAllTagPhotos(tag: string): Observable<any>{
-    const params = new HttpParams().append("tags", tag).append('format', 'json').append('nojsoncallback', '1').append('per_page', '10');
+    const params = new HttpParams().append("tags", tag).append('format', 'json')
+    .append('nojsoncallback', '1')
+    .append('extras', 'date_upload, date_taken, owner_name, url_q, views')
+    .append('sort', 'interestingness-desc')
+    .append('per_page', '30');
     return this.http.get(`${this.baseUrl}&api_key=${this.apiKey}`, { params: params })
   }
 

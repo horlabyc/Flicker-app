@@ -22,7 +22,10 @@ export class StartPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.photosService.photos$.subscribe(photos => this.photos = photos);
+    this.photosService.photos$.subscribe(photos => {
+      console.log(photos)
+      this.photos = photos
+    });
   }
 
   reset(){
@@ -49,8 +52,7 @@ export class StartPageComponent implements OnInit {
       this.showLoading = false;
       this.updatePhotos(res.photos.photo.map(p => {
         return {
-          ...p, tag,
-          url: `https://live.staticflickr.com/${p.server}/${p.id}_${p.secret}.jpg`
+          ...p, tag
         }
       }));
       this.searchControl.reset();

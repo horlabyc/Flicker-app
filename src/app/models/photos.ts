@@ -9,5 +9,9 @@ export interface Photo {
   server: string;
   title: string;
   tag: string;
-  url: string
+  url_q: string,
+  datetaken: string;
+  dateupload: string;
+  views: string;
+  ownername: string
 }
