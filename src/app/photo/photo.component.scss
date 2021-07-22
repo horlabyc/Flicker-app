@@ -6,7 +6,6 @@
   max-width: 300px;
   overflow: hidden;
   position: relative;
-  cursor: pointer;
   .tag-name {
     position: absolute;
     background: white;
@@ -46,5 +45,10 @@
         color: #aba79e;
       }
     }
+  }
+  .showall {
+    color: #aba79e;
+    cursor: pointer;
+    text-align: center;
   }
 }

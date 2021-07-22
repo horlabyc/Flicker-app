@@ -1,4 +1,4 @@
-<div class="photo" (click)="navigate()">
+<div class="photo">
   <p class="tag-name">{{photo.tag | titlecase}}</p>
   <p class="views">5000</p>
   <img [src]="photo.url_q">
@@ -16,4 +16,5 @@
       <p>{{photo.datetaken | date}}</p>
     </div>
   </div>
+  <p (click)="navigate()" class="showall">Show all images</p>
 </div>
