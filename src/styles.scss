@@ -1,7 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 html, body { height: 100%; }
-* {
+*, h1, h2,p, span {
   font-family: 'Montserrat', sans-serif;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: white !important;
+}
+.mat-raised-button.mat-primary {
+  // background-color: #36B37E !important;
+  font-size: 1rem;
+  min-height: 2.5rem;
+  min-width: 5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

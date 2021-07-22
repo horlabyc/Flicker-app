@@ -7,7 +7,22 @@
         <mat-error *ngIf="searchControl.invalid">Please enter a valid tag</mat-error>
       </mat-form-field>
       <button mat-button (click)="reset()">Reset Input</button>
-      <button mat-raised-button color="primary" type="submit" (click)="submit()" [disabled]="searchControl.invalid">Submit</button>
+      <button mat-raised-button color="primary" type="submit" (click)="submit()" [disabled]="searchControl.invalid || showLoading">
+        <ng-container [ngTemplateOutlet]='showLoading ? loading : idle'></ng-container>
+      </button>
     </form>
   </section>
+
+  <section class="photos">
+    <app-photo *ngFor="let p of photos" [photo]=p></app-photo>
+  </section>
 </div>
+
+<ng-template #loading>
+  <mat-spinner diameter="20"></mat-spinner>
+</ng-template>
+<ng-template #idle>
+  Submit
+</ng-template>
+
+<!-- https://live.staticflickr.com/{server-id}/{id}_{secret}.jpg -->
